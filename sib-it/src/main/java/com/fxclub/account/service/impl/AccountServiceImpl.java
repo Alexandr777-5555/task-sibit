@@ -48,10 +48,10 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public void withdraw(Long id, double amount) throws LimitedBalanceException {
+    public void withdraw(Long id, BigDecimal amount) throws LimitedBalanceException {
         Account account = repository.getOne(id);
         if (account != null) {
-            account.withdraw(amount);
+            account.withdraw(amount.doubleValue());
             repository.save(account);
         }
     }

@@ -60,7 +60,7 @@ public class Controller {
         log.info("in method withdraw");
         Long id =  request.getId().longValue();
         balance = request.getAmount(); // сумма для снятия
-        double withdraw = balance.doubleValue();
+        BigDecimal withdraw = BigDecimal.valueOf(balance.doubleValue());
         service.withdraw( id ,withdraw);
     }
 

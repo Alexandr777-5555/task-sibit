@@ -15,6 +15,6 @@ public interface AccountService {
 
     void deposit(Long id, BigDecimal amount);
 
-    void withdraw(Long id, double amount) throws LimitedBalanceException;
+    void withdraw(Long id, BigDecimal amount) throws LimitedBalanceException;
 
 }
