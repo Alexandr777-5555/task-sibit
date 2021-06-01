@@ -51,7 +51,7 @@ public class Controller {
         log.info("in method deposit");
         Long id = request.getId().longValue();
         balance = request.getAmount();
-        double deposit = balance.doubleValue();
+        BigDecimal deposit= BigDecimal.valueOf(balance.doubleValue());
         service.deposit(id, deposit);
     }
 
